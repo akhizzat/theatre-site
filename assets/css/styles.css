@@ -11,47 +11,40 @@
   --max:1100px;
 }
 
-/* Фон для всей страницы */
-html, body {
-  margin: 0;
-  padding: 0;
-  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  color: var(--text);
-
-  background: url('../img/fon.jpg') no-repeat center center fixed;
-  background-size: cover;
-  position: relative;
+/* Фон */
+html,body{
+  margin:0;padding:0;
+  font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color:var(--text);
+  background:url('../img/fon.jpg') no-repeat center center fixed;
+  background-size:cover;
+  position:relative;
 }
-
-/* Полупрозрачный тёмный слой поверх фона */
-html::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.55);  /* затемнение */
-  z-index: -1;                   /* чтобы не перекрывало контент */
+/* общее затемнение */
+html::before{
+  content:"";position:fixed;inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:-1;
 }
-
 
 *{box-sizing:border-box}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .container{max-width:var(--max);margin:auto;padding:0 16px}
 
-/* Header */
+/* Header — светлая полупрозрачная */
 .header{
-  position:sticky; top:0; z-index:50;
-  background:rgba(11,11,13,.85);
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.20);            /* было rgba(11,11,13,.85) */
   backdrop-filter:saturate(180%) blur(10px);
-  border-bottom:1px solid var(--border);
+  border-bottom:1px solid rgba(255,255,255,.28);
 }
 .header__row{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:700}
-.logo img{width:28px;height:28px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;color:#fff}
+.logo img{width:28px;height:28px;filter:drop-shadow(0 0 2px rgba(0,0,0,.6))}
 .nav{display:flex;gap:18px}
 .nav a{padding:8px 10px;border-radius:10px}
-.nav a:hover{background:var(--card)}
+.nav a:hover{background:rgba(255,255,255,.15)}
 .nav-toggle{display:none;background:transparent;border:0;cursor:pointer}
 .nav-toggle span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px}
 
@@ -92,12 +85,12 @@ thead th{background:var(--bg-alt)}
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
 .rounded{border-radius:var(--radius);border:1px solid var(--border)}
 
-/* Прайс-блоки (если понадобится) */
+/* Прайс-блоки */
 .pricing{grid-template-columns:repeat(3,1fr)}
 .price{background:rgba(24,25,35,.9);border:1px solid var(--border);border-radius:var(--radius);padding:18px}
 .price__value{font-size:22px;margin:6px 0 12px}
 
-/* Списки/шаги */
+/* Списки */
 .list{padding-left:18px}
 .list li{margin:6px 0}
 .list.small li{margin:4px 0;font-size:14px;color:var(--muted)}
@@ -127,46 +120,32 @@ thead th{background:var(--bg-alt)}
 .footer{border-top:1px solid var(--border);padding:16px 0;background:rgba(18,18,23,.9)}
 .footer__row{display:flex;align-items:center;justify-content:space-between}
 
-/* ===== Актёры ===== */
+/* Актёры */
 .actors-grid{grid-template-columns:repeat(2,1fr)}
-.actors-grid .card{padding:0} 
-.actors-grid .card img{
-  width:100%; height:420px;
-  object-fit:cover; border-radius:var(--radius);
-}
+.actors-grid .card{padding:0}
+.actors-grid .card img{width:100%;height:420px;object-fit:cover;border-radius:var(--radius)}
 
-/* ===== Афиши спектаклей ===== */
+/* Афиши */
 .repertoire-grid{grid-template-columns:repeat(3,1fr)}
 .repertoire-grid .card{padding:0}
-.repertoire-grid .card img{
-  width:100%; height:380px;
-  object-fit:contain; background:rgba(18,18,23,.9);
-  border-radius:var(--radius);
-}
+.repertoire-grid .card img{width:100%;height:380px;object-fit:contain;background:rgba(18,18,23,.9);border-radius:var(--radius)}
 
-/* Hover-анимация изображений */
+/* Hover */
 .card img{transition:transform .3s ease;cursor:pointer}
 .card img:hover{transform:scale(1.05)}
 
-/* ===== Лайтбокс ===== */
+/* Lightbox */
 .lightbox{
-  position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
-  background:rgba(0,0,0,.9); z-index:10000; opacity:0; pointer-events:none;
-  transition:opacity .25s ease;
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(0,0,0,.9);z-index:10000;opacity:0;pointer-events:none;transition:opacity .25s ease;
 }
-.lightbox.active{opacity:1; pointer-events:auto}
-.lightbox img{
-  max-width:90%; max-height:90%;
-  border-radius:var(--radius); box-shadow:0 0 20px rgba(0,0,0,.6);
-  animation:zoomIn .2s ease;
-}
+.lightbox.active{opacity:1;pointer-events:auto}
+.lightbox img{max-width:90%;max-height:90%;border-radius:var(--radius);box-shadow:0 0 20px rgba(0,0,0,.6);animation:zoomIn .2s ease}
 @keyframes zoomIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
 body.noscroll{overflow:hidden}
 
-/* ===== Адаптив ===== */
-@media (max-width:1100px){
-  .repertoire-grid{grid-template-columns:repeat(5,1fr)}
-}
+/* Адаптив */
+@media (max-width:1100px){.repertoire-grid{grid-template-columns:repeat(5,1fr)}}
 @media (max-width:980px){
   .hero__row{grid-template-columns:1fr}
   .cards{grid-template-columns:repeat(2,1fr)}
@@ -179,33 +158,23 @@ body.noscroll{overflow:hidden}
   .cards{grid-template-columns:1fr}
   .pricing{grid-template-columns:1fr}
   .nav{
-    display:none; position:absolute; top:64px; right:16px; background:rgba(18,18,23,.95);
-    padding:10px; border:1px solid var(--border); border-radius:12px; flex-direction:column; min-width:180px
+    display:none;position:absolute;top:64px;right:16px;background:rgba(18,18,23,.95);
+    padding:10px;border:1px solid var(--border);border-radius:12px;flex-direction:column;min-width:180px
   }
   .nav.show{display:flex}
   .nav-toggle{display:block}
-
   .actors-grid{grid-template-columns:1fr}
   .actors-grid .card img{height:360px}
-
   .repertoire-grid{grid-template-columns:repeat(2,1fr)}
   .repertoire-grid .card img{height:260px}
 }
-.hero__text {
-  background: rgba(0,0,0,0.45);
-  padding: 18px;
-  border-radius: var(--radius);
-}
-.hero__text h1, 
-.hero__text p {
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
-}
-/* ===== Читаемость текста поверх фона ===== */
-h1, h2, h3, .section p {
-  color: #fff;
-  text-shadow:
-    -1px -1px 2px #000,
-     1px -1px 2px #000,
-    -1px  1px 2px #000,
-     1px  1px 2px #000; /* черный контур */
+
+/* Читаемость текста в hero */
+.hero__text{background:rgba(0,0,0,.45);padding:18px;border-radius:var(--radius)}
+.hero__text h1,.hero__text p{ text-shadow:1px 1px 3px rgba(0,0,0,.9) }
+
+/* Контур заголовков/подписей секций */
+h1,h2,h3,.section p{
+  color:#fff;
+  text-shadow:-1px -1px 2px #000,1px -1px 2px #000,-1px 1px 2px #000,1px 1px 2px #000;
 }
