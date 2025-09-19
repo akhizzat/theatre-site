@@ -1,0 +1,211 @@
+:root{
+  --bg:#0b0b0d;
+  --bg-alt:#121217;
+  --card:#181923;
+  --text:#e8e8ee;
+  --muted:#a7a7b4;
+  --acc:#c79bff;
+  --acc-2:#5fd5c7;
+  --border:#2a2b38;
+  --radius:14px;
+  --max:1100px;
+}
+
+/* Фон для всей страницы */
+html, body {
+  margin: 0;
+  padding: 0;
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color: var(--text);
+
+  background: url('../img/fon.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+/* Полупрозрачный тёмный слой поверх фона */
+html::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.55);  /* затемнение */
+  z-index: -1;                   /* чтобы не перекрывало контент */
+}
+
+
+*{box-sizing:border-box}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--max);margin:auto;padding:0 16px}
+
+/* Header */
+.header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(11,11,13,.85);
+  backdrop-filter:saturate(180%) blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.header__row{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700}
+.logo img{width:28px;height:28px}
+.nav{display:flex;gap:18px}
+.nav a{padding:8px 10px;border-radius:10px}
+.nav a:hover{background:var(--card)}
+.nav-toggle{display:none;background:transparent;border:0;cursor:pointer}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px}
+
+/* Hero */
+.hero{padding:48px 0 24px;border-bottom:1px solid var(--border)}
+.hero__row{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+.hero__text h1{font-size:clamp(28px,5vw,48px);line-height:1.15;margin:0 0 10px}
+.hero__cta{display:flex;gap:12px;margin-top:12px}
+.hero__media img{border-radius:var(--radius);border:1px solid var(--border)}
+
+/* Sections */
+.section{padding:48px 0}
+.section--alt{background:rgba(18,18,23,.85);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+h2{font-size:28px;margin:0 0 18px}
+h3{margin:0 0 10px}
+.muted{color:var(--muted)}
+.mt{margin-top:28px}
+
+/* Grid + cards */
+.grid{display:grid;gap:16px}
+.cards{grid-template-columns:repeat(3,1fr)}
+.card{
+  background:rgba(24,25,35,.9);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.card__body{padding:14px 14px 16px;display:grid;gap:8px}
+
+/* Таблица */
+.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:12px;background:rgba(18,18,23,.9)}
+table{width:100%;border-collapse:collapse;min-width:640px}
+th,td{padding:12px;border-bottom:1px solid var(--border);text-align:left}
+thead th{background:var(--bg-alt)}
+
+/* Колонки */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.rounded{border-radius:var(--radius);border:1px solid var(--border)}
+
+/* Прайс-блоки (если понадобится) */
+.pricing{grid-template-columns:repeat(3,1fr)}
+.price{background:rgba(24,25,35,.9);border:1px solid var(--border);border-radius:var(--radius);padding:18px}
+.price__value{font-size:22px;margin:6px 0 12px}
+
+/* Списки/шаги */
+.list{padding-left:18px}
+.list li{margin:6px 0}
+.list.small li{margin:4px 0;font-size:14px;color:var(--muted)}
+.steps{padding-left:18px}
+.steps li{margin:6px 0}
+
+/* Форма */
+.contact-form{display:grid;gap:10px;margin-top:10px}
+.contact-form label{display:grid;gap:6px;font-size:14px;color:var(--muted)}
+.contact-form input,.contact-form textarea{
+  background:#101117;border:1px solid var(--border);color:var(--text);
+  padding:10px;border-radius:10px;outline:none
+}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--acc)}
+
+/* Карта */
+.map iframe{width:100%;height:320px;border:0;border-radius:var(--radius);border:1px solid var(--border);background:rgba(24,25,35,.9)}
+
+/* Кнопки */
+.btn{display:inline-block;padding:10px 14px;border:1px solid var(--border);border-radius:12px;background:transparent}
+.btn--primary{background:linear-gradient(90deg,var(--acc),var(--acc-2));color:#101016;border:0}
+.btn--small{padding:8px 12px}
+.btn--tiny{padding:6px 10px;font-size:14px}
+.btn--full{display:block;text-align:center;width:100%}
+
+/* Footer */
+.footer{border-top:1px solid var(--border);padding:16px 0;background:rgba(18,18,23,.9)}
+.footer__row{display:flex;align-items:center;justify-content:space-between}
+
+/* ===== Актёры ===== */
+.actors-grid{grid-template-columns:repeat(2,1fr)}
+.actors-grid .card{padding:0} 
+.actors-grid .card img{
+  width:100%; height:420px;
+  object-fit:cover; border-radius:var(--radius);
+}
+
+/* ===== Афиши спектаклей ===== */
+.repertoire-grid{grid-template-columns:repeat(3,1fr)}
+.repertoire-grid .card{padding:0}
+.repertoire-grid .card img{
+  width:100%; height:380px;
+  object-fit:contain; background:rgba(18,18,23,.9);
+  border-radius:var(--radius);
+}
+
+/* Hover-анимация изображений */
+.card img{transition:transform .3s ease;cursor:pointer}
+.card img:hover{transform:scale(1.05)}
+
+/* ===== Лайтбокс ===== */
+.lightbox{
+  position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
+  background:rgba(0,0,0,.9); z-index:10000; opacity:0; pointer-events:none;
+  transition:opacity .25s ease;
+}
+.lightbox.active{opacity:1; pointer-events:auto}
+.lightbox img{
+  max-width:90%; max-height:90%;
+  border-radius:var(--radius); box-shadow:0 0 20px rgba(0,0,0,.6);
+  animation:zoomIn .2s ease;
+}
+@keyframes zoomIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+body.noscroll{overflow:hidden}
+
+/* ===== Адаптив ===== */
+@media (max-width:1100px){
+  .repertoire-grid{grid-template-columns:repeat(5,1fr)}
+}
+@media (max-width:980px){
+  .hero__row{grid-template-columns:1fr}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .pricing{grid-template-columns:1fr 1fr}
+  .cols{grid-template-columns:1fr}
+  .repertoire-grid{grid-template-columns:repeat(3,1fr)}
+  .repertoire-grid .card img{height:320px}
+}
+@media (max-width:640px){
+  .cards{grid-template-columns:1fr}
+  .pricing{grid-template-columns:1fr}
+  .nav{
+    display:none; position:absolute; top:64px; right:16px; background:rgba(18,18,23,.95);
+    padding:10px; border:1px solid var(--border); border-radius:12px; flex-direction:column; min-width:180px
+  }
+  .nav.show{display:flex}
+  .nav-toggle{display:block}
+
+  .actors-grid{grid-template-columns:1fr}
+  .actors-grid .card img{height:360px}
+
+  .repertoire-grid{grid-template-columns:repeat(2,1fr)}
+  .repertoire-grid .card img{height:260px}
+}
+.hero__text {
+  background: rgba(0,0,0,0.45);
+  padding: 18px;
+  border-radius: var(--radius);
+}
+.hero__text h1, 
+.hero__text p {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+}
+/* ===== Читаемость текста поверх фона ===== */
+h1, h2, h3, .section p {
+  color: #fff;
+  text-shadow:
+    -1px -1px 2px #000,
+     1px -1px 2px #000,
+    -1px  1px 2px #000,
+     1px  1px 2px #000; /* черный контур */
+}
