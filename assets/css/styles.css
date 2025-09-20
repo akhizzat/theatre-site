@@ -11,7 +11,7 @@
   --max:1100px;
 }
 
-/* Фон */
+/* ===== Фон ===== */
 html,body{
   margin:0;padding:0;
   font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial;
@@ -20,7 +20,6 @@ html,body{
   background-size:cover;
   position:relative;
 }
-/* общее затемнение */
 html::before{
   content:"";position:fixed;inset:0;
   background:rgba(0,0,0,.55);
@@ -32,72 +31,138 @@ img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .container{max-width:var(--max);margin:auto;padding:0 16px}
 
-/* Header — светлая полупрозрачная */
+/* ===== Header (светлая прозрачность) ===== */
 .header{
   position:sticky;top:0;z-index:50;
-  background:rgba(255,255,255,.20);            /* было rgba(11,11,13,.85) */
+  background:rgba(255,255,255,.20);
   backdrop-filter:saturate(180%) blur(10px);
   border-bottom:1px solid rgba(255,255,255,.28);
 }
-.header__row{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:700;color:#fff}
+.header__row{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  height:64px;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;color:#fff;white-space:nowrap}
 .logo img{width:28px;height:28px;filter:drop-shadow(0 0 2px rgba(0,0,0,.6))}
-.nav{display:flex;gap:18px}
+.nav{display:flex;gap:18px;align-items:center}
 .nav a{padding:8px 10px;border-radius:10px}
 .nav a:hover{background:rgba(255,255,255,.15)}
 .nav-toggle{display:none;background:transparent;border:0;cursor:pointer}
 .nav-toggle span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px}
 
-/* Hero */
+/* ===== Переключатель языков (унифицированный) ===== */
+.lang-switch, .lang-switcher{
+  display:flex;gap:8px;align-items:center;
+}
+.btn-lang, .lang-switcher button{
+  padding:6px 10px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.12);
+  color:#fff;border-radius:8px;cursor:pointer;
+  font-size:14px;line-height:1;
+}
+.btn-lang:hover, .lang-switcher button:hover{background:rgba(255,255,255,.22)}
+.btn-lang.active, .lang-switcher button.active{
+  background:linear-gradient(90deg,var(--acc),var(--acc-2));
+  border:0;color:#101016;
+}
+
+/* ===== Hero ===== */
 .hero{padding:48px 0 24px;border-bottom:1px solid var(--border)}
 .hero__row{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+.hero__text{background:rgba(0,0,0,.45);padding:18px;border-radius:var(--radius)}
 .hero__text h1{font-size:clamp(28px,5vw,48px);line-height:1.15;margin:0 0 10px}
+.hero__text h1,.hero__text p{ text-shadow:1px 1px 3px rgba(0,0,0,.9) }
 .hero__cta{display:flex;gap:12px;margin-top:12px}
 .hero__media img{border-radius:var(--radius);border:1px solid var(--border)}
 
-/* Sections */
+/* ===== Sections ===== */
 .section{padding:48px 0}
 .section--alt{background:rgba(18,18,23,.85);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-h2{font-size:28px;margin:0 0 18px}
-h3{margin:0 0 10px}
 .muted{color:var(--muted)}
 .mt{margin-top:28px}
 
-/* Grid + cards */
+/* ===== ЧИТАЕМЫЕ ЗАГОЛОВКИ / ПОДЗАГОЛОВКИ ===== */
+h1,h2,h3{
+  margin:0 0 18px;color:#fff;font-weight:800;letter-spacing:.2px;
+  text-shadow:-1px -1px 2px #000,1px -1px 2px #000,-1px 1px 2px #000,1px 1px 2px #000;
+}
+.section h2,.section--alt h2,.hero__text h1{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:12px;
+  background:linear-gradient(90deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.42) 55%, rgba(0,0,0,0) 100%);
+  border:1px solid rgba(255,255,255,.12);
+  backdrop-filter:saturate(150%) blur(2px);
+}
+
+/* Доп. бейдж */
+.badge-dark{
+  display:inline-block;padding:6px 10px;border-radius:10px;
+  background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.12)
+}
+
+/* ===== Заголовок + описание (actors, и можно в других местах) ===== */
+.section-header{
+  display:flex;flex-direction:column;align-items:flex-start;gap:6px;
+}
+.section-header h1{
+  display:inline-block;
+  padding:8px 14px;border-radius:12px;
+  background:linear-gradient(90deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.42) 55%, rgba(0,0,0,0) 100%);
+  border:1px solid rgba(255,255,255,.12);
+  backdrop-filter:saturate(150%) blur(2px);
+  color:#fff;font-weight:800;
+  text-shadow:-1px -1px 2px #000,1px -1px 2px #000,-1px 1px 2px #000,1px 1px 2px #000;
+}
+.section-sub{
+  display:inline-block;margin-top:6px;padding:6px 12px;border-radius:10px;
+  font-size:16px;color:#fff;
+  text-shadow:-1px -1px 2px #000,1px -1px 2px #000,-1px 1px 2px #000,1px 1px 2px #000;
+  background:linear-gradient(90deg,rgba(0,0,0,.65) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,0) 100%);
+  border:1px solid rgba(255,255,255,.12);
+  backdrop-filter:saturate(150%) blur(2px);
+}
+
+/* ===== Grid + cards ===== */
 .grid{display:grid;gap:16px}
 .cards{grid-template-columns:repeat(3,1fr)}
 .card{
   background:rgba(24,25,35,.9);
   border:1px solid var(--border);
   border-radius:var(--radius);
-  overflow:hidden;
-  display:flex;flex-direction:column;
+  overflow:hidden;display:flex;flex-direction:column;
 }
 .card__body{padding:14px 14px 16px;display:grid;gap:8px}
 
-/* Таблица */
+/* ===== Таблица (расписание) ===== */
 .table-wrap{overflow:auto;border:1px solid var(--border);border-radius:12px;background:rgba(18,18,23,.9)}
-table{width:100%;border-collapse:collapse;min-width:640px}
-th,td{padding:12px;border-bottom:1px solid var(--border);text-align:left}
+table{width:100%;border-collapse:collapse;min-width:760px}
+th,td{
+  padding:12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:middle;color:#fff;
+  text-shadow:1px 1px 3px rgba(0,0,0,.9);
+}
 thead th{background:var(--bg-alt)}
+tbody td:nth-child(1), thead th:nth-child(1){white-space:nowrap;width:90px}
+tbody td:nth-child(2), thead th:nth-child(2){white-space:nowrap;width:90px}
 
-/* Колонки */
+/* ===== Колонки / утилиты ===== */
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
 .rounded{border-radius:var(--radius);border:1px solid var(--border)}
 
-/* Прайс-блоки */
+/* ===== Прайс (на будущее) ===== */
 .pricing{grid-template-columns:repeat(3,1fr)}
 .price{background:rgba(24,25,35,.9);border:1px solid var(--border);border-radius:var(--radius);padding:18px}
 .price__value{font-size:22px;margin:6px 0 12px}
 
-/* Списки */
+/* ===== Списки ===== */
 .list{padding-left:18px}
 .list li{margin:6px 0}
 .list.small li{margin:4px 0;font-size:14px;color:var(--muted)}
 .steps{padding-left:18px}
 .steps li{margin:6px 0}
 
-/* Форма */
+/* ===== Форма ===== */
 .contact-form{display:grid;gap:10px;margin-top:10px}
 .contact-form label{display:grid;gap:6px;font-size:14px;color:var(--muted)}
 .contact-form input,.contact-form textarea{
@@ -106,35 +171,35 @@ thead th{background:var(--bg-alt)}
 }
 .contact-form input:focus,.contact-form textarea:focus{border-color:var(--acc)}
 
-/* Карта */
+/* ===== Карта ===== */
 .map iframe{width:100%;height:320px;border:0;border-radius:var(--radius);border:1px solid var(--border);background:rgba(24,25,35,.9)}
 
-/* Кнопки */
+/* ===== Кнопки ===== */
 .btn{display:inline-block;padding:10px 14px;border:1px solid var(--border);border-radius:12px;background:transparent}
 .btn--primary{background:linear-gradient(90deg,var(--acc),var(--acc-2));color:#101016;border:0}
 .btn--small{padding:8px 12px}
 .btn--tiny{padding:6px 10px;font-size:14px}
 .btn--full{display:block;text-align:center;width:100%}
 
-/* Footer */
+/* ===== Footer ===== */
 .footer{border-top:1px solid var(--border);padding:16px 0;background:rgba(18,18,23,.9)}
 .footer__row{display:flex;align-items:center;justify-content:space-between}
 
-/* Актёры */
+/* ===== Актёры ===== */
 .actors-grid{grid-template-columns:repeat(2,1fr)}
 .actors-grid .card{padding:0}
 .actors-grid .card img{width:100%;height:420px;object-fit:cover;border-radius:var(--radius)}
 
-/* Афиши */
+/* ===== Афиши ===== */
 .repertoire-grid{grid-template-columns:repeat(3,1fr)}
 .repertoire-grid .card{padding:0}
 .repertoire-grid .card img{width:100%;height:380px;object-fit:contain;background:rgba(18,18,23,.9);border-radius:var(--radius)}
 
-/* Hover */
+/* ===== Hover изображений ===== */
 .card img{transition:transform .3s ease;cursor:pointer}
 .card img:hover{transform:scale(1.05)}
 
-/* Lightbox */
+/* ===== Lightbox ===== */
 .lightbox{
   position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
   background:rgba(0,0,0,.9);z-index:10000;opacity:0;pointer-events:none;transition:opacity .25s ease;
@@ -144,8 +209,10 @@ thead th{background:var(--bg-alt)}
 @keyframes zoomIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
 body.noscroll{overflow:hidden}
 
-/* Адаптив */
-@media (max-width:1100px){.repertoire-grid{grid-template-columns:repeat(5,1fr)}}
+/* ===== Адаптив ===== */
+@media (max-width:1100px){
+  .repertoire-grid{grid-template-columns:repeat(5,1fr)}
+}
 @media (max-width:980px){
   .hero__row{grid-template-columns:1fr}
   .cards{grid-template-columns:repeat(2,1fr)}
@@ -153,6 +220,11 @@ body.noscroll{overflow:hidden}
   .cols{grid-template-columns:1fr}
   .repertoire-grid{grid-template-columns:repeat(3,1fr)}
   .repertoire-grid .card img{height:320px}
+}
+@media (max-width:780px){
+  .header__row{flex-wrap:wrap}
+  .nav{order:2;width:100%;justify-content:center}
+  .lang-switch{order:3;width:100%;justify-content:center;margin-top:6px}
 }
 @media (max-width:640px){
   .cards{grid-template-columns:1fr}
@@ -167,14 +239,4 @@ body.noscroll{overflow:hidden}
   .actors-grid .card img{height:360px}
   .repertoire-grid{grid-template-columns:repeat(2,1fr)}
   .repertoire-grid .card img{height:260px}
-}
-
-/* Читаемость текста в hero */
-.hero__text{background:rgba(0,0,0,.45);padding:18px;border-radius:var(--radius)}
-.hero__text h1,.hero__text p{ text-shadow:1px 1px 3px rgba(0,0,0,.9) }
-
-/* Контур заголовков/подписей секций */
-h1,h2,h3,.section p{
-  color:#fff;
-  text-shadow:-1px -1px 2px #000,1px -1px 2px #000,-1px 1px 2px #000,1px 1px 2px #000;
 }

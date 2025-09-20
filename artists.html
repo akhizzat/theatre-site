@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="artists.title">Artistlar — Teatr "Diydor"</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/img/oteatre.jpg" />
+</head>
+<body class="page-artists">
+  <!-- Шапка -->
+  <header class="header">
+    <div class="container header__row">
+      <a class="logo" href="index.html#home" aria-label="Home">
+        <img src="assets/img/oteatre.jpg" alt="Logo" />
+        <span data-i18n="brand">Teatr "Diydor"</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" aria-label="Main menu">
+        <a href="actors.html" data-i18n="nav.performances">Spektakllar</a>
+        <a href="artists.html" data-i18n="nav.artists">Artistlar</a>
+        <a href="index.html#repertoire" data-i18n="nav.playbill">Afisha</a>
+        <a href="index.html#about" data-i18n="nav.about">Teatr haqida</a>
+        <a href="index.html#contacts" data-i18n="nav.contacts">Aloqa</a>
+      </nav>
+
+      <div class="lang-switch">
+        <button class="btn-lang" data-lang="uz">UZ</button>
+        <button class="btn-lang" data-lang="ru">RU</button>
+        <button class="btn-lang" data-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Заголовок + описание -->
+  <section class="section">
+    <div class="container section-header">
+      <h1 data-i18n="artists.title">Artistlar</h1>
+      <p class="section-sub" data-i18n="artists.desc">
+        Teatr truppasi: foto, F.I.Sh, tug‘ilgan sanasi va yutuqlar.
+      </p>
+    </div>
+  </section>
+
+  <!-- Карточки артистов: 2 колонки × 5 строк = 10 карточек -->
+  <section class="section">
+    <div class="container">
+      <div class="grid actors-grid">
+        <!-- 1 -->
+        <article class="card">
+          <img src="assets/img/placeholder.jpg" alt="Artist 1" />
+          <div class="card__body">
+            <h3 class="artist-name">Иванов Иван Иванович</h3>
+            <p><strong data-i18n="label.dob">Tug‘ilgan sana:</strong> 01.01.1990</p>
+            <p><strong data-i18n="label.ach">Yutuqlar:</strong> Лауреат фестиваля XXX.</p>
+          </div>
+        </article>
+        <!-- 2 -->
+        <article class="card">
+          <img src="assets/img/placeholder.jpg" alt="Artist 2" />
+          <div class="card__body">
+            <h3 class="artist-name">Петров Пётр Петрович</h3>
+            <p><strong data-i18n="label.dob">Tug‘ilgan sana:</strong> 12.03.1988</p>
+            <p><strong data-i18n="label.ach">Yutuqlar:</strong> Заслуженный артист.</p>
+          </div>
+        </article>
+        <!-- 3 -->
+        <article class="card">
+          <img src="assets/img/placeholder.jpg" alt="Artist 3" />
+          <div class="card__body">
+            <h3 class="artist-name">Сидорова Анна Сергеевна</h3>
+            <p><strong data-i18n="label.dob">Tug‘ilgan sana:</strong> 05.07.1992</p>
+            <p><strong data-i18n="label.ach">Yutuqlar:</strong> Победитель конкурса «Debut».</p>
+          </div>
+        </article>
+        <!-- 4 -->
+        <article class="card">
+          <img src="assets/img/placeholder.jpg" alt="Artist 4" />
+          <div class="card__body">
+            <h3 class="artist-name">Ахмедов Шерзод</h3>
+            <p><strong data-i18n="label.dob">Tug‘ilgan sana:</strong> 22.10.1987</p>
+            <p><strong data-i18n="label.ach">Yutuqlar:</strong> Лучший актёр сезона 2023.</p>
+          </div>
+        </article>
+        <!-- 5 -->
+        <article class="card">
+          <img src="assets/img/placeholder.jpg" alt="Artist 5" />
+          <div class="card__body">
+            <h3 class="artist-name">Юсупова Мадина</h3>
+            <p><strong data-i18n="label.dob">Tug‘ilgan sana:</strong> 18.09.1995</p>
+            <p><strong data-i18n="label.ach">Yutuqlar:</strong> Лауреат премии «Master».</p>
+          </div>
+        </article>
+        <!-- 6 -->
+        <article class="card">
+          <img src="assets/img/placeholder.jpg" alt="Artist 6" />
+          <div class="card__body">
+            <h3 class="artist-name">Каримова Нилуфар</h3>
+            <p><strong data-i18n="label.dob">Tug‘ilgan sana:</strong> 30.11.1993</p>
+            <p><strong data-i18n="label.ach">Yutuqlar:</strong> Участник международных фестивалей.</p>
+          </div>
+        </article>
+        <!-- 7 -->
+        <article class="card">
+          <img src="assets/img/placeholder.jpg" alt="Artist 7" />
+          <div class="card__body">
+            <h3 class="artist-name">Рахмонов Джамшид</h3>
+            <p><strong data-i18n="label.dob">Tug‘ilgan sana:</strong> 14.02.1989</p>
+            <p><strong data-i18n="label.ach">Yutuqlar:</strong> Лучший дебют 2022.</p>
+          </div>
+        </article>
+        <!-- 8 -->
+        <article class="card">
+          <img src="assets/img/placeholder.jpg" alt="Artist 8" />
+          <div class="card__body">
+            <h3 class="artist-name">Назарова Дия</h3>
+            <p><strong data-i18n="label.dob">Tug‘ilgan sana:</strong> 02.05.1994</p>
+            <p><strong data-i18n="label.ach">Yutuqlar:</strong> Приз зрительских симпатий.</p>
+          </div>
+        </article>
+        <!-- 9 -->
+        <article class="card">
+          <img src="assets/img/placeholder.jpg" alt="Artist 9" />
+          <div class="card__body">
+            <h3 class="artist-name">Отабеков Мурод</h3>
+            <p><strong data-i18n="label.dob">Tug‘ilgan sana:</strong> 09.06.1991</p>
+            <p><strong data-i18n="label.ach">Yutuqlar:</strong> Гран-при «Diydor».</p>
+          </div>
+        </article>
+        <!-- 10 -->
+        <article class="card">
+          <img src="assets/img/placeholder.jpg" alt="Artist 10" />
+          <div class="card__body">
+            <h3 class="artist-name">Саидахмедова Лола</h3>
+            <p><strong data-i18n="label.dob">Tug‘ilgan sana:</strong> 27.08.1996</p>
+            <p><strong data-i18n="label.ach">Yutuqlar:</strong> Лучшая роль второго плана.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="container footer__row">
+      <small>© <span id="year"></span> <span data-i18n="brand">Teatr "Diydor"</span></small>
+      <a href="#" data-i18n="footer.up">Yuqoriga ↑</a>
+    </div>
+  </footer>
+
+  <!-- Лайтбокс -->
+  <div class="lightbox" id="lightbox"><img src="" alt="Preview" /></div>
+
+  <!-- Скрипты -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

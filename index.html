@@ -1,262 +1,183 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uz">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Teatr "Diydor"</title>
-  <meta name="description" content="Официальный сайт театра: афиша, репертуар, билеты, контакты." />
-  <link rel="icon" href="assets/img/oteatre.jpg" type="image/svg+xml" />
+  <title data-i18n="meta.title">Teatr "Diydor"</title>
+  <meta name="description" content="Teatr Diydor rasmiy sayti: afisha, repertuar, aloqa." data-i18n="meta.desc" />
+  <link rel="icon" href="assets/img/oteatre.jpg" type="image/jpeg" />
   <link rel="preload" href="assets/img/placeholder.jpg" as="image" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <!-- Шапка -->
+
+  <!-- Header -->
   <header class="header">
     <div class="container header__row">
-      <a class="logo" href="#home" aria-label="На главную">
-        <img src="assets/img/oteatre.jpg" alt="Логотип театра" />
-        <span>Teatr "Diydor"</span>
+      <a class="logo" href="#home" aria-label="Home">
+        <img src="assets/img/oteatre.jpg" alt="Diydor logo" />
+        <span data-i18n="brand">Teatr "Diydor"</span>
       </a>
-      <button class="nav-toggle" aria-label="Меню" aria-expanded="false">
+
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <nav class="nav" aria-label="Главное меню">
-        <a href="actors.html">Spektakllar</a>
-        <a href="#repertoire">Bosh sahifa</a>
-        <a href="#about">Matbuot xizmati</a>
-        <a href="#contacts">Biz bilan bog'lanish</a>
+
+      <nav class="nav" aria-label="Main">
+        <!-- Наши выступления (отдельная страница) -->
+        <a href="actors.html" data-i18n="nav.performances">Наши выступления</a>
+        <!-- Артисты (отдельная страница) -->
+        <a href="artists.html" data-i18n="nav.artists">Артисты</a>
+        <!-- Афиша (якорь на этой странице) -->
+        <a href="#repertoire" data-i18n="nav.playbill">Афиша</a>
+        <a href="#about" data-i18n="nav.about">О театре</a>
+        <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
       </nav>
+
+      <!-- Lang switch -->
+      <div class="lang-switch">
+        <button class="btn-lang active" data-lang="uz">UZ</button>
+        <button class="btn-lang" data-lang="ru">RU</button>
+        <button class="btn-lang" data-lang="en">EN</button>
+      </div>
     </div>
   </header>
 
-  <!-- Главный экран -->
+  <!-- Hero -->
   <section id="home" class="hero">
     <div class="container hero__row">
       <div class="hero__text">
-        <h1>Teatr "Diydor"</h1>
-        <p>Klassika va zamonaviylik bir sahnada</p>
+        <h1 data-i18n="hero.title">Teatr "Diydor"</h1>
+        <p data-i18n="hero.subtitle">Klassika va zamonaviylik bir sahnada</p>
         <div class="hero__cta">
-         <a class="btn btn--primary" href="#repertoire">Afishani tomosha qiling</a>
+          <a class="btn btn--primary" href="#repertoire" data-i18n="hero.cta">Afishani tomosha qiling</a>
         </div>
       </div>
       <div class="hero__media">
-        <img src="assets/img/stsena.jpg" alt="Сцена театра" loading="eager" />
+        <img src="assets/img/stsena.jpg" alt="Sahna" loading="eager" />
       </div>
     </div>
   </section>
 
-  <!-- Репертуар / Афиша -->
+  <!-- Афиша -->
   <section id="repertoire" class="section">
     <div class="container">
-      <h2>Bizning spektakllar</h2>
+      <h2 data-i18n="rep.title">Bizning spektakllar</h2>
       <div class="grid repertoire-grid">
-  <!-- карточка 1 -->
-  <article class="card">
-    <img src="assets/img/uchburchak.jpg" alt="Спектакль 1" />
-  </article>
-
-  <!-- карточка 2 -->
-  <article class="card">
-    <img src="assets/img/baxtsizkuyov.jpg" alt="Спектакль 2" />
-  </article>
-
-  <!-- карточка 3 -->
-  <article class="card">
-    <img src="assets/img/drama3.jpg" alt="Спектакль 3" />
-  </article>
-
-  <!-- карточка 4 -->
-  <article class="card">
-    <img src="assets/img/drama4.jpg" alt="Спектакль 4" />
-  </article>
-
-  <!-- карточка 5 -->
-  <article class="card">
-    <img src="assets/img/drama5.jpg" alt="Спектакль 5" />
-  </article>
-
-  <!-- карточка 6 -->
-  <article class="card">
-    <img src="assets/img/drama6.jpg" alt="Спектакль 6" />
-  </article>
-
-  <!-- карточка 7 -->
-  <article class="card">
-    <img src="assets/img/drama7.jpg" alt="Спектакль 7" />
-  </article>
-
-  <!-- карточка 8 -->
-  <article class="card">
-    <img src="assets/img/drama8.jpg" alt="Спектакль 8" />
-  </article>
-
-  <!-- карточка 9 -->
-  <article class="card">
-    <img src="assets/img/drama9.jpg" alt="Спектакль 9" />
-  </article>
-
-  <!-- карточка 10 -->
-  <article class="card">
-    <img src="assets/img/drama10.jpg" alt="Спектакль 10" />
-  </article>
-
-  <!-- карточка 11 -->
-  <article class="card">
-    <img src="assets/img/drama11.jpg" alt="Спектакль 11" />
-  </article>
-</div>
-
-    <section class="section section--alt" id="schedule">
-  <div class="container">
-    <h2>Jadval</h2>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Sana</th>
-            <th>Vaqt</th>
-            <th>Nomi</th>
-            <th>Muallif</th>
-            <th>Rejissyor</th>
-            <th>Janr</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>13.09</td>
-            <td>17:00</td>
-            <td>Uchburchak</td>
-            <td>Muallif A</td>
-            <td>Bobur Yuldashev</td>
-            <td>Drama</td>
-          </tr>
-          <tr>
-            <td>14.09</td>
-            <td>17:00</td>
-            <td>Uchburchak</td>
-            <td>Muallif A</td>
-            <td>Bobur Yuldashev</td>
-            <td>Drama</td>
-          </tr>
-          <tr>
-            <td>18.09</td>
-            <td>17:00</td>
-            <td>Qumga Bitilgan Iqror</td>
-            <td>Muallif B</td>
-            <td>Bobur Yuldashev</td>
-            <td>Drama</td>
-          </tr>
-          <tr>
-            <td>19.09</td>
-            <td>17:00</td>
-            <td>Qumga Bitilgan Iqror</td>
-            <td>Muallif B</td>
-            <td>Bobur Yuldashev</td>
-            <td>Drama</td>
-          </tr>
-          <tr>
-            <td>20.09</td>
-            <td>17:00</td>
-            <td>Qumga Bitilgan Iqror</td>
-            <td>Muallif B</td>
-            <td>Bobur Yuldashev</td>
-            <td>Drama</td>
-          </tr>
-          <tr>
-            <td>21.10</td>
-            <td>17:00</td>
-            <td>Baxtsiz Kuyov</td>
-            <td>Muallif C</td>
-            <td>Bobur Yuldashev</td>
-            <td>Drama</td>
-          </tr>
-          <tr>
-            <td>27.10</td>
-            <td>17:00</td>
-            <td>Hayvonlar Tarixi</td>
-            <td>Muallif D</td>
-            <td>Bobur Yuldashev</td>
-            <td>Drama</td>
-          </tr>
-          <tr>
-            <td>28.10</td>
-            <td>17:00</td>
-            <td>Qumga Bitilgan Iqror</td>
-            <td>Muallif B</td>
-            <td>Bobur Yuldashev</td>
-            <td>Drama</td>
-          </tr>
-        </tbody>
-      </table>
+        <article class="card"><img src="assets/img/uchburchak.jpg" alt="Uchburchak" /></article>
+        <article class="card"><img src="assets/img/baxtsizkuyov.jpg" alt="Baxtsiz Kuyov" /></article>
+        <article class="card"><img src="assets/img/drama3.jpg" alt="Spektakl 3" /></article>
+        <article class="card"><img src="assets/img/drama4.jpg" alt="Spektakl 4" /></article>
+        <article class="card"><img src="assets/img/drama5.jpg" alt="Spektakl 5" /></article>
+        <article class="card"><img src="assets/img/drama6.jpg" alt="Spektakl 6" /></article>
+        <article class="card"><img src="assets/img/drama7.jpg" alt="Spektakl 7" /></article>
+        <article class="card"><img src="assets/img/drama8.jpg" alt="Spektakl 8" /></article>
+        <article class="card"><img src="assets/img/drama9.jpg" alt="Spektakl 9" /></article>
+        <article class="card"><img src="assets/img/drama10.jpg" alt="Spektakl 10" /></article>
+        <article class="card"><img src="assets/img/drama11.jpg" alt="Spektakl 11" /></article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Расписание -->
+  <section id="schedule" class="section section--alt">
+    <div class="container">
+      <h2 data-i18n="sched.title">Jadval</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th data-i18n="tbl.date">Sana</th>
+              <th data-i18n="tbl.time">Vaqt</th>
+              <th data-i18n="tbl.title">Nomi</th>
+              <th data-i18n="tbl.author">Muallif</th>
+              <th data-i18n="tbl.director">Rejissyor</th>
+              <th data-i18n="tbl.genre">Janr</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>13.09</td><td>17:00</td><td>Uchburchak</td><td>Muallif A</td><td>Bobur Yuldashev</td><td>Drama</td></tr>
+            <tr><td>14.09</td><td>17:00</td><td>Uchburchak</td><td>Muallif A</td><td>Bobur Yuldashev</td><td>Drama</td></tr>
+            <tr><td>18.09</td><td>17:00</td><td>Qumga Bitilgan Iqror</td><td>Muallif B</td><td>Bobur Yuldashev</td><td>Drama</td></tr>
+            <tr><td>19.09</td><td>17:00</td><td>Qumga Bitilgan Iqror</td><td>Muallif B</td><td>Bobur Yuldashev</td><td>Drama</td></tr>
+            <tr><td>20.09</td><td>17:00</td><td>Qumga Bitilgan Iqror</td><td>Muallif B</td><td>Bobur Yuldashev</td><td>Drama</td></tr>
+            <tr><td>21.10</td><td>17:00</td><td>Baxtsiz Kuyov</td><td>Muallif C</td><td>Bobur Yuldashev</td><td>Drama</td></tr>
+            <tr><td>27.10</td><td>17:00</td><td>Hayvonlar Tarixi</td><td>Muallif D</td><td>Bobur Yuldashev</td><td>Drama</td></tr>
+            <tr><td>28.10</td><td>17:00</td><td>Qumga Bitilgan Iqror</td><td>Muallif B</td><td>Bobur Yuldashev</td><td>Drama</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
   <!-- О театре -->
   <section id="about" class="section section--alt">
     <div class="container cols">
       <div>
-        <h2>О театре</h2>
-        <p>Краткая история театра, труппа, награды. Этот текст заменим на реальный.</p>
+        <h2 data-i18n="about.title">Teatr haqida</h2>
+        <p data-i18n="about.lead">Teatrning qisqacha tarixi, truppa, mukofotlar.</p>
         <ul class="list">
-          <li>Основан: 1989</li>
-          <li>Сцена: 50 мест</li>
-          <li>Группа: драматическая и музыкальная</li>
+          <li data-i18n="about.founded">Asoslangan: 1989</li>
+          <li data-i18n="about.seats">Sahna: 50 o‘rin</li>
+          <li data-i18n="about.genre">Yo‘nalish: dramatik va musiqiy</li>
         </ul>
       </div>
-      <img class="rounded" src="assets/img/oteatre.jpg" alt="Фойе театра" loading="lazy" />
+      <img class="rounded" src="assets/img/oteatre.jpg" alt="Teatr foyesi" loading="lazy" />
     </div>
   </section>
 
+  <!-- Контакты -->
   <section id="contacts" class="section section--alt">
     <div class="container cols">
       <div>
-        <h2>Biz bilan bog'lanish</h2>
-        <p><strong>Telefon raqam:</strong> +998 (71) 233-27-58 , +998 (97) 708-42-00</p>
-        <p><strong>Bizning manzil:</strong> 100000, Toshkent sh, Buyuk Ipak Yo`li mavzesi,  9-uy.</p>
+        <h2 data-i18n="contacts.title">Biz bilan bog'lanish</h2>
+        <p><strong data-i18n="contacts.phoneLabel">Telefon:</strong> +998 (71) 233-27-58 , +998 (97) 708-42-00</p>
+        <p><strong data-i18n="contacts.addrLabel">Manzil:</strong> 100000, Toshkent sh, Buyuk Ipak Yo‘li mavzesi, 9-uy.</p>
         <p><strong>Email:</strong> anvar.toyir@mail.ru</p>
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Заявка отправлена (демо)');">
-          <label>F.I.Sh<input type="text" required /></label>
+
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Yuborildi');">
+          <label data-i18n="form.name">F.I.Sh<input type="text" required /></label>
           <label>Email<input type="email" required /></label>
-          <label>Xabar<textarea rows="4" required></textarea></label>
-          <button class="btn btn--primary" type="submit">Xabar jo'natish</button>
+          <label data-i18n="form.msg">Xabar<textarea rows="4" required></textarea></label>
+          <button class="btn btn--primary" type="submit" data-i18n="form.send">Xabar jo'natish</button>
         </form>
       </div>
+
       <div class="map">
-       <iframe
-        title="Карта Diydor teatr-studiya"
-        src="https://www.google.com/maps?&q=41.3149078,69.2900981(Diydor%20teatr-studiya)&z=17&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        allowfullscreen>
-      </iframe>
+        <iframe
+          title="Diydor teatr-studiya"
+          src="https://www.google.com/maps?&q=41.3149078,69.2900981(Diydor%20teatr-studiya)&z=17&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
       </div>
+    </div>
   </section>
-  
-  <!-- Подвал -->
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container footer__row">
-      <small>© <span id="year"></span>Teatr "Diydor"</small>
-      <a href="#home">Yuqoriga ↑</a>
+      <small>© <span id="year"></span> <span data-i18n="brand">Teatr "Diydor"</span></small>
+      <a href="#home" data-i18n="footer.up">Yuqoriga ↑</a>
     </div>
   </footer>
 
-  <!-- Структурированные данные (заполним позже настоящими данными) -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "PerformingArtsTheater",
-    "name": "Городской театр",
-    "address": {"@type": "PostalAddress", "addressLocality": "Ташкент", "streetAddress": "ул. Примерная, 1"},
-    "telephone": "+998 71 233-27-58",
-    "url": "https://example.com"
+    "@context":"https://schema.org",
+    "@type":"PerformingArtsTheater",
+    "name":"Teatr Diydor",
+    "address":{"@type":"PostalAddress","addressLocality":"Toshkent","streetAddress":"Buyuk Ipak Yo'li mavzesi, 9-uy"},
+    "telephone":"+998712332758",
+    "url":"https://akhizzat.github.io/theatre-site/"
   }
   </script>
 
   <script src="assets/js/main.js"></script>
-  <div class="lightbox" id="lightbox">
-  <img src="" alt="Просмотр" />
-</div>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox"><img src="" alt="Preview" /></div>
 </body>
 </html>

@@ -1,138 +1,111 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uz">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Spektakllar — Teatr "Diydor"</title>
+  <title data-i18n="actors.metaTitle">Spektakllar — Teatr "Diydor"</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/img/oteatre.jpg" />
 </head>
 <body>
-  <!-- Шапка -->
+
+  <!-- Header -->
   <header class="header">
-  <div class="container header__row">
-    <a class="logo" href="index.html" aria-label="На главную">
-      <img src="assets/img/oteatre.jpg" alt="Логотип театра" />
-      <span>Teatr "Diydor"</span> 
-    </a>
-    <nav class="nav" aria-label="Главное меню">
-      <a href="actors.html">Spektakllar</a>
-      <a href="index.html#repertoire">Bosh sahifa</a>
-      <a href="index.html#about">Matbuot xizmati</a>
-      <a href="index.html#contacts">Biz bilan bog'lanish</a>
-    </nav>
-  </div>
-</header>
-  <!-- Контент -->
+    <div class="container header__row">
+      <a class="logo" href="index.html#home" aria-label="Home">
+        <img src="assets/img/oteatre.jpg" alt="Diydor logo" />
+        <span data-i18n="brand">Teatr "Diydor"</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" aria-label="Main">
+        <!-- этот раздел -->
+        <a href="actors.html" data-i18n="nav.performances">Spektakllar</a>
+        <!-- новая страница Артисты -->
+        <a href="artists.html" data-i18n="nav.artists">Arti stlar</a>
+        <!-- якоря главной -->
+        <a href="index.html#repertoire" data-i18n="nav.playbill">Afisha</a>
+        <a href="index.html#about" data-i18n="nav.about">Teatr haqida</a>
+        <a href="index.html#contacts" data-i18n="nav.contacts">Aloqa</a>
+      </nav>
+
+      <!-- Lang switch (как на главной) -->
+      <div class="lang-switch">
+        <button class="btn-lang" data-lang="uz">UZ</button>
+        <button class="btn-lang" data-lang="ru">RU</button>
+        <button class="btn-lang" data-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
   <section class="section">
-  <div class="container">
-    <h1>Spektakllar</h1>
-    <p class="muted">Bu erda teatr guruhi haqidagi fotosuratlar va ma'lumotlar keltirilgan.</p>
-    <div class="grid actors-grid">
-  <article class="card">
-    <img src="assets/img/akter1.jpg" alt="Актёр 1" />
-  </article>
-  <article class="card">
-    <img src="assets/img/akter2.jpg" alt="Актёр 2" />
-  </article>
-  <article class="card">
-    <img src="assets/img/akter3.jpg" alt="Актёр 3" />
-  </article>
-  <article class="card">
-    <img src="assets/img/akter4.jpg" alt="Актёр 4" />
-  </article>
-  <article class="card">
-    <img src="assets/img/akter5.jpg" alt="Актёр 5" />
-  </article>
-  <article class="card">
-    <img src="assets/img/akter6.jpg" alt="Актёр 6" />
-  </article>
-  <article class="card">
-    <img src="assets/img/akter7.jpg" alt="Актёр 7" />
-  </article>
-  <article class="card">
-    <img src="assets/img/akter8.jpg" alt="Актёр 8" />
-  </article>
-  <article class="card">
-    <img src="assets/img/akter9.jpg" alt="Актёр 9" />
-  </article>
-  <article class="card">
-    <img src="assets/img/akter10.jpg" alt="Актёр 10" />
-  </article>
-  <article class="card">
-    <img src="assets/img/akter11.jpg" alt="Актёр 11" />
-  </article><article class="card">
-    <img src="assets/img/akter12.jpg" alt="Актёр 12" />
-  </article><article class="card">
-    <img src="assets/img/akter13.jpg" alt="Актёр 13" />
-  </article><article class="card">
-    <img src="assets/img/akter14.jpg" alt="Актёр 14" />
-  </article><article class="card">
-    <img src="assets/img/akter15.jpg" alt="Актёр 15" />
-  </article><article class="card">
-    <img src="assets/img/akter16.jpg" alt="Актёр 16" />
-  </article><article class="card">
-    <img src="assets/img/akter17.jpg" alt="Актёр 17" />
-  </article><article class="card">
-    <img src="assets/img/akter18.jpg" alt="Актёр 18" />
-  </article><article class="card">
-    <img src="assets/img/akter19.jpg" alt="Актёр 19" />
-  </article><article class="card">
-    <img src="assets/img/akter20.jpg" alt="Актёр 20" />
-  </article><article class="card">
-    <img src="assets/img/akter21.jpg" alt="Актёр 21" />
-  </article>
-  <article class="card">
-    <img src="assets/img/akter22.jpg" alt="Актёр 22" />
-  </article>
-  <article class="card">
-    <img src="assets/img/akter23.jpg" alt="Актёр 23" />
-  </article><article class="card">
-    <img src="assets/img/akter24.jpg" alt="Актёр 24" />
-  </article><article class="card">
-    <img src="assets/img/akter25.jpg" alt="Актёр 25" />
-  </article><article class="card">
-    <img src="assets/img/akter26.jpg" alt="Актёр 26" />
-  </article><article class="card">
-    <img src="assets/img/akter27.jpg" alt="Актёр 27" />
-  </article><article class="card">
-    <img src="assets/img/akter28.jpg" alt="Актёр 28" />
-  </article><article class="card">
-    <img src="assets/img/akter29.jpg" alt="Актёр 29" />
-  </article><article class="card">
-    <img src="assets/img/akter30.jpg" alt="Актёр 30" />
-  </article>
-  </article><article class="card">
-    <img src="assets/img/akter31.jpg" alt="Актёр 31" />
-  </article></article><article class="card">
-    <img src="assets/img/akter32.jpg" alt="Актёр 32" />
-  </article></article><article class="card">
-    <img src="assets/img/akter33.jpg" alt="Актёр 33" />
-  </article></article><article class="card">
-    <img src="assets/img/akter34.jpg" alt="Актёр 34" />
-  </article></article><article class="card">
-    <img src="assets/img/akter35.jpg" alt="Актёр 35" />
-  </article></article><article class="card">
-    <img src="assets/img/akter36.jpg" alt="Актёр 36" />
-  </article></article><article class="card">
-    <img src="assets/img/akter37.jpg" alt="Актёр 37" />
-  </article>
+    <div class="container">
+      <!-- Заголовок/подзаголовок с подложкой -->
+      <div class="section-header">
+        <h1 data-i18n="actors.title">Spektakllar</h1>
+        <p class="section-sub" data-i18n="actors.desc">
+          Bu erda teatr guruhi haqidagi fotosuratlar va ma'lumotlar keltirilgan.
+        </p>
+      </div>
+
+      <!-- Сетка карточек -->
+      <div class="grid actors-grid">
+        <article class="card"><img src="assets/img/akter3.jpg"  alt="Aktyor 1"  /></article>
+        <article class="card"><img src="assets/img/akter2.jpg"  alt="Aktyor 2"  /></article>
+        <article class="card"><img src="assets/img/akter1.jpg"  alt="Aktyor 3"  /></article>
+        <article class="card"><img src="assets/img/akter4.jpg"  alt="Aktyor 4"  /></article>
+        <article class="card"><img src="assets/img/akter5.jpg"  alt="Aktyor 5"  /></article>
+        <article class="card"><img src="assets/img/akter6.jpg"  alt="Aktyor 6"  /></article>
+        <article class="card"><img src="assets/img/akter7.jpg"  alt="Aktyor 7"  /></article>
+        <article class="card"><img src="assets/img/akter8.jpg"  alt="Aktyor 8"  /></article>
+        <article class="card"><img src="assets/img/akter9.jpg"  alt="Aktyor 9"  /></article>
+        <article class="card"><img src="assets/img/akter10.jpg" alt="Aktyor 10" /></article>
+        <article class="card"><img src="assets/img/akter11.jpg" alt="Aktyor 11" /></article>
+        <article class="card"><img src="assets/img/akter12.jpg" alt="Aktyor 12" /></article>
+        <article class="card"><img src="assets/img/akter13.jpg" alt="Aktyor 13" /></article>
+        <article class="card"><img src="assets/img/akter14.jpg" alt="Aktyor 14" /></article>
+        <article class="card"><img src="assets/img/akter15.jpg" alt="Aktyor 15" /></article>
+        <article class="card"><img src="assets/img/akter16.jpg" alt="Aktyor 16" /></article>
+        <article class="card"><img src="assets/img/akter17.jpg" alt="Aktyor 17" /></article>
+        <article class="card"><img src="assets/img/akter18.jpg" alt="Aktyor 18" /></article>
+        <article class="card"><img src="assets/img/akter19.jpg" alt="Aktyor 19" /></article>
+        <article class="card"><img src="assets/img/akter20.jpg" alt="Aktyor 20" /></article>
+        <article class="card"><img src="assets/img/akter21.jpg" alt="Aktyor 21" /></article>
+        <article class="card"><img src="assets/img/akter22.jpg" alt="Aktyor 22" /></article>
+        <article class="card"><img src="assets/img/akter23.jpg" alt="Aktyor 23" /></article>
+        <article class="card"><img src="assets/img/akter24.jpg" alt="Aktyor 24" /></article>
+        <article class="card"><img src="assets/img/akter25.jpg" alt="Aktyor 25" /></article>
+        <article class="card"><img src="assets/img/akter26.jpg" alt="Aktyor 26" /></article>
+        <article class="card"><img src="assets/img/akter27.jpg" alt="Aktyor 27" /></article>
+        <article class="card"><img src="assets/img/akter28.jpg" alt="Aktyor 28" /></article>
+        <article class="card"><img src="assets/img/akter29.jpg" alt="Aktyor 29" /></article>
+        <article class="card"><img src="assets/img/akter30.jpg" alt="Aktyor 30" /></article>
+        <article class="card"><img src="assets/img/akter31.jpg" alt="Aktyor 31" /></article>
+        <article class="card"><img src="assets/img/akter32.jpg" alt="Aktyor 32" /></article>
+        <article class="card"><img src="assets/img/akter33.jpg" alt="Aktyor 33" /></article>
+        <article class="card"><img src="assets/img/akter34.jpg" alt="Aktyor 34" /></article>
+        <article class="card"><img src="assets/img/akter35.jpg" alt="Aktyor 35" /></article>
+        <article class="card"><img src="assets/img/akter36.jpg" alt="Aktyor 36" /></article>
+        <article class="card"><img src="assets/img/akter37.jpg" alt="Aktyor 37" /></article>
+      </div>
     </div>
-    </article>
-    </div>
-  </div>
-</section>
-  <!-- Подвал -->
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container footer__row">
-      <small>© <span id="year"></span> Teatr "Diydor"</small>
-      <a href="#">Yuqoriga ↑</a>
+      <small>© <span id="year"></span> <span data-i18n="brand">Teatr "Diydor"</span></small>
+      <a href="#" data-i18n="footer.up">Yuqoriga ↑</a>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
-  <div class="lightbox" id="lightbox">
-  <img src="" alt="Просмотр" />
-</div>
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox"><img src="" alt="Preview" /></div>
 
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
