@@ -70,7 +70,7 @@ const translations = {
     brand: 'Teatr "Diydor"',
     nav: {
       performances: 'Spektakllar',
-      artists: 'Artistlar',
+      artists: 'Akterlar',
       playbill: 'Afisha',
       about: 'Teatr haqida',
       contacts: 'Aloqa'
@@ -91,7 +91,7 @@ const translations = {
     brand: 'Театр «Дийдор»',
     nav: {
       performances: 'Наши выступления',
-      artists: 'Артисты',
+      artists: 'Актеры',
       playbill: 'Афиша',
       about: 'О театре',
       contacts: 'Контакты'
@@ -112,7 +112,7 @@ const translations = {
     brand: '"Diydor" Theatre',
     nav: {
       performances: 'Performances',
-      artists: 'Artists',
+      artists: 'Actors',
       playbill: 'Playbill',
       about: 'About',
       contacts: 'Contacts'
@@ -202,3 +202,14 @@ document.querySelectorAll('.btn-lang, .lang-switcher button').forEach(btn => {
 
 /* initial language */
 applyI18n(localStorage.getItem('lang') || 'uz');
+// Подсветить активный пункт меню (по текущему URL)
+(function () {
+  const here = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav a').forEach(a => {
+    const href = a.getAttribute('href') || '';
+    // считаем активным, если точное совпадение файла
+    if (href.endsWith(here) || (here === 'index.html' && href.startsWith('#'))) {
+      a.classList.add('active');
+    }
+  });
+})();

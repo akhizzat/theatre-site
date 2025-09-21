@@ -240,3 +240,34 @@ body.noscroll{overflow:hidden}
   .repertoire-grid{grid-template-columns:repeat(2,1fr)}
   .repertoire-grid .card img{height:260px}
 }
+/* Пилюли для пунктов меню */
+.nav {
+  display:flex; gap:12px; align-items:center;
+}
+.nav a{
+  display:inline-block;
+  padding:8px 14px;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:999px;                 /* пилюля */
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  line-height:1;
+  transition:transform .15s ease, background .15s ease, border-color .15s ease;
+  backdrop-filter:saturate(150%) blur(2px);
+}
+.nav a:hover{
+  background:rgba(255,255,255,.22);
+  border-color:rgba(255,255,255,.35);
+  transform:translateY(-1px);
+}
+.nav a.active{
+  background:linear-gradient(90deg, var(--acc), var(--acc-2));
+  color:#101016;
+  border-color:transparent;
+}
+
+/* На очень узких экранах — чтобы не ломалось */
+@media (max-width:640px){
+  .nav{flex-wrap:wrap; justify-content:center}
+  .nav a{padding:8px 12px; font-size:14px}
+}
