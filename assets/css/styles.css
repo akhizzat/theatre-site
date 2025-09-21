@@ -271,3 +271,58 @@ body.noscroll{overflow:hidden}
   .nav{flex-wrap:wrap; justify-content:center}
   .nav a{padding:8px 12px; font-size:14px}
 }
+.contact-form{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  margin-top:12px;
+}
+
+.contact-form label{
+  font-size:14px;
+  color:var(--muted);
+}
+
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  min-height:44px;
+  padding:10px 12px;
+  color:var(--text);
+  background:#101117;
+  border:1px solid var(--border);
+  border-radius:10px;
+  outline:none;
+}
+
+.contact-form textarea{
+  min-height:120px;          /* поле сообщения заметно */
+  resize:vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color:var(--acc);
+  box-shadow:0 0 0 2px rgba(199,155,255,.25);
+}
+/* Lightbox arrows */
+.lightbox{
+  position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
+  background:rgba(0,0,0,.9); z-index:10000; opacity:0; pointer-events:none; transition:opacity .25s ease;
+}
+.lightbox.active{opacity:1; pointer-events:auto}
+.lightbox img{
+  max-width:90%; max-height:90%;
+  border-radius:var(--radius); box-shadow:0 0 20px rgba(0,0,0,.6); animation:zoomIn .2s ease;
+}
+
+.lb-btn{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:48px; height:64px; border:0; border-radius:12px;
+  background:rgba(255,255,255,.15); color:#fff; font-size:34px; line-height:1;
+  display:flex; align-items:center; justify-content:center; cursor:pointer;
+  backdrop-filter:saturate(150%) blur(2px);
+}
+.lb-btn:hover{background:rgba(255,255,255,.28)}
+.lb-prev{left:24px}
+.lb-next{right:24px}

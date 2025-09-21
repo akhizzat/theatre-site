@@ -136,10 +136,14 @@
         <p><strong>Email:</strong> anvar.toyir@mail.ru</p>
 
         <form class="contact-form" onsubmit="event.preventDefault(); alert('Yuborildi');">
-          <label data-i18n="form.name">F.I.Sh<input type="text" required /></label>
-          <label>Email<input type="email" required /></label>
-          <label data-i18n="form.msg">Xabar<textarea rows="4" required></textarea></label>
-          <button class="btn btn--primary" type="submit" data-i18n="form.send">Xabar jo'natish</button>
+         <label for="cf-name" data-i18n="form.name">F.I.O.</label>
+         <input id="cf-name" name="name" type="text" required />
+         <label for="cf-email">Email</label>
+         <input id="cf-email" name="email" type="email" required />
+         <label for="cf-msg" data-i18n="form.msg">Xabar</label>
+         <textarea id="cf-msg" name="message" rows="5" required></textarea>
+         <button class="btn btn--primary" type="submit" data-i18n="form.send">Xabar jo'natish
+         </button>
         </form>
       </div>
 
@@ -177,7 +181,11 @@
 
   <script src="assets/js/main.js"></script>
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox"><img src="" alt="Preview" /></div>
+<!-- Lightbox / Галерея -->
+<div id="lightbox" class="lightbox">
+  <button class="lb-btn lb-prev" aria-label="Previous">‹</button>
+  <img alt="Preview">
+  <button class="lb-btn lb-next" aria-label="Next">›</button>
+</div>
 </body>
 </html>

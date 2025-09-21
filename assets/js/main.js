@@ -84,7 +84,7 @@ const translations = {
     form: { name: 'F.I.Sh', msg: 'Xabar', send: 'Xabar jo\'natish' },
     footer: { up: 'Yuqoriga ↑' },
     actors: { title: 'Spektakllar', desc: 'Bu erda teatr guruhi haqidagi fotosuratlar va ma\'lumotlar keltirilgan.' },
-    artists: { title: 'Artistlar', desc: 'Teatr truppasi: foto, F.I.Sh, tug‘ilgan sanasi va yutuqlar.' }
+    artists: { title: 'Akterlar', desc: 'Teatr truppasi: foto, F.I.Sh, tug‘ilgan sanasi va yutuqlar.' }
   },
   ru: {
     meta: { title: 'Театр «Дийдор»', desc: 'Официальный сайт театра: афиша, репертуар, контакты.' },
@@ -105,7 +105,7 @@ const translations = {
     form: { name: 'Ф.И.О.', msg: 'Сообщение', send: 'Отправить сообщение' },
     footer: { up: 'Наверх ↑' },
     actors: { title: 'Наши выступления', desc: 'Здесь представлены фотографии и информация о труппе театра.' },
-    artists: { title: 'Артисты', desc: 'Труппа театра: фото, Ф.И.О., дата рождения и достижения.' }
+    artists: { title: 'Актеры', desc: 'Труппа театра: фото, Ф.И.О., дата рождения и достижения.' }
   },
   en: {
     meta: { title: '"Diydor" Theatre', desc: 'Official theatre website: playbill, repertoire, contacts.' },
@@ -126,7 +126,7 @@ const translations = {
     form: { name: 'Full name', msg: 'Message', send: 'Send message' },
     footer: { up: 'Back to top ↑' },
     actors: { title: 'Performances', desc: 'Here you can find photos and information about the theatre troupe.' },
-    artists: { title: 'Artists', desc: 'The troupe: photos, full name, date of birth and achievements.' }
+    artists: { title: 'Actors', desc: 'The troupe: photos, full name, date of birth and achievements.' }
   }
 };
 
