@@ -63,7 +63,7 @@ a{color:inherit;text-decoration:none}
 /* ===== Hero ===== */
 .hero{padding:48px 0 24px;border-bottom:1px solid var(--border)}
 .hero__row{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
-.hero__text{background:rgba(0,0,0,.45);padding:18px;border-radius:var(--radius)}
+.hero__text{background:rgba(0,0,0,.45);padding:18px;border-radius:16px}
 .hero__text h1{font-size:clamp(28px,5vw,48px);line-height:1.15;margin:0 0 10px}
 .hero__text h1,.hero__text p{ text-shadow:1px 1px 3px rgba(0,0,0,.9) }
 .hero__cta{display:flex;gap:12px;margin-top:12px}
@@ -147,19 +147,67 @@ tbody td:nth-child(2), thead th:nth-child(2){white-space:nowrap;width:90px}
 .contact-form textarea{min-height:120px;resize:vertical}
 .contact-form input:focus,.contact-form textarea:focus{border-color:var(--acc);box-shadow:0 0 0 2px rgba(199,155,255,.25)}
 
+/* ==== CTA и кнопка формы (как на скрине) ==== */
+.hero__cta .btn--primary{
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, var(--acc), var(--acc-2));
+  color: #101016;
+  border: 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+}
+.hero__cta .btn--primary:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.28);
+  opacity: .95;
+}
+.contact-form .btn--primary{
+  display:block;width:100%;
+  padding:14px 18px;border-radius:14px;
+  background:linear-gradient(90deg, var(--acc), var(--acc-2));
+  color:#101016;border:0;box-shadow:0 6px 18px rgba(0,0,0,.25);
+  transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+}
+.contact-form .btn--primary:hover{
+  transform:translateY(-1px);
+  box-shadow:0 10px 22px rgba(0,0,0,.28);
+  opacity:.95;
+}
+
 /* ===== Footer ===== */
 .footer{border-top:1px solid var(--border);padding:16px 0;background:rgba(18,18,23,.9)}
 .footer__row{display:flex;align-items:center;justify-content:space-between}
 
-/* ===== Актёры ===== */
+/* ===== Актёры (исправленное кадрирование) ===== */
 .actors-grid{grid-template-columns:repeat(2,1fr)}
-.actors-grid .card{padding:0}
-.actors-grid .card img{width:100%;height:420px;object-fit:cover;border-radius:var(--radius)}
+.actors-grid .card{padding:0;display:flex;flex-direction:column}
+.actors-grid .card img{
+  width:100%;
+  aspect-ratio:3/2;           /* единый кадр, без искажений */
+  height:auto;
+  object-fit:cover;
+  object-position:50% 30%;    /* чаще центр по лицу */
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  background:rgba(18,18,23,.9);
+}
+/* Фолбэк для очень старых браузеров */
+@supports not (aspect-ratio: 3 / 2) {
+  .actors-grid .card img{height:420px}
+}
+/* Утилиты для точной подстройки конкретных фото */
+.img-focus-center { object-position:50% 50% !important; }
+.img-focus-top    { object-position:50% 15% !important; }
+.img-focus-bottom { object-position:50% 85% !important; }
 
 /* ===== Афиши ===== */
 .repertoire-grid{grid-template-columns:repeat(3,1fr)}
 .repertoire-grid .card{padding:0}
-.repertoire-grid .card img{width:100%;height:380px;object-fit:contain;background:rgba(18,18,23,.9);border-radius:var(--radius)}
+.repertoire-grid .card img{
+  width:100%;height:380px;object-fit:contain;
+  background:rgba(18,18,23,.9);border-radius:var(--radius)
+}
 
 /* ===== Hover изображений ===== */
 .card img{transition:transform .3s ease;cursor:pointer}
@@ -189,6 +237,18 @@ body.noscroll{overflow:hidden}
 .lb-prev{left:24px}
 .lb-next{right:24px}
 
+/* ===== Карта ===== */
+.map{margin-top:20px}
+.map iframe{
+  width:100%;
+  height:360px;
+  border:0;
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  background:rgba(24,25,35,.9);
+  display:block;
+}
+
 /* ===== Адаптив ===== */
 @media (max-width:1100px){ .repertoire-grid{grid-template-columns:repeat(5,1fr)} }
 @media (max-width:980px){
@@ -207,7 +267,6 @@ body.noscroll{overflow:hidden}
 /* ===== Мобильная шапка: меню под «⋯», языки всегда видны ===== */
 @media (max-width:640px){
   .nav-toggle{display:block}
-  /* прячем меню — откроется по .show */
   .nav{
     display:none; position:fixed; left:0; right:0; top:64px; bottom:auto;
     background:rgba(18,18,23,.96); backdrop-filter:saturate(160%) blur(8px);
@@ -219,56 +278,10 @@ body.noscroll{overflow:hidden}
   .nav a{padding:10px 14px}
   .nav{flex-wrap:nowrap}
   .actors-grid{grid-template-columns:1fr}
-  .actors-grid .card img{height:360px}
+  .actors-grid .card img{height:auto}
+  @supports not (aspect-ratio: 3 / 2) {
+    .actors-grid .card img{height:360px}
+  }
   .repertoire-grid{grid-template-columns:repeat(2,1fr)}
   .repertoire-grid .card img{height:260px}
-}
-/* ==== ПИЛЮЛЯ-КНОПКА В HERO (как на скрине) ==== */
-.hero__cta .btn--primary{
-  padding: 12px 18px;
-  border-radius: 14px;
-  background: linear-gradient(90deg, var(--acc), var(--acc-2));
-  color: #101016;
-  border: 0;
-  box-shadow: 0 6px 18px rgba(0,0,0,.25);
-  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
-}
-.hero__cta .btn--primary:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(0,0,0,.28);
-  opacity: .95;
-}
-
-/* ==== КНОПКА ОТПРАВКИ В ФОРМЕ (полная ширина, градиент) ==== */
-.contact-form .btn--primary{
-  display: block;
-  width: 100%;
-  padding: 14px 18px;
-  border-radius: 14px;
-  background: linear-gradient(90deg, var(--acc), var(--acc-2));
-  color: #101016;
-  border: 0;
-  box-shadow: 0 6px 18px rgba(0,0,0,.25);
-  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
-}
-.contact-form .btn--primary:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(0,0,0,.28);
-  opacity: .95;
-}
-
-/* (опционально) слегка увеличим радиус у полупрозрачной плашки hero для гармонии */
-.hero__text{ border-radius: 16px; }
-/* ===== Карта ===== */
-.map {
-  margin-top: 20px;
-}
-.map iframe {
-  width: 100%;
-  height: 360px;              /* можно увеличить/уменьшить */
-  border: 0;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: rgba(24,25,35,.9);
-  display: block;
 }
