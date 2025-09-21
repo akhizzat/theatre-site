@@ -101,10 +101,10 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 /* ===== i18n ===== */
 const translations = {
   uz: {
-    meta: { title: 'Teatr "Diydor"', desc: 'Teatr Diydor rasmiy sayti: afisha, repertuar, aloqa.' },
-    brand: 'Teatr "Diydor"',
+    meta: { title: '"Diydor Yoshlar Eksperimental Teatr Studiyasi" DM ', desc: 'Teatr Diydor rasmiy sayti: afisha, repertuar, aloqa.' },
+    brand: '"Diydor Yoshlar Eksperimental Teatr Studiyasi" DM ',
     nav: { performances: 'Spektakllar', artists: 'Aktyorlar', playbill: 'Afisha', about: 'Teatr haqida', contacts: 'Aloqa' },
-    hero: { title: 'Teatr "Diydor"', subtitle: 'Klassika va zamonaviylik bir sahnada', cta: 'Afishani tomosha qiling' },
+    hero: { title: '"Diydor Yoshlar Eksperimental Teatr Studiyasi" DM ', subtitle: 'Klassika va zamonaviylik bir sahnada', cta: 'Afishani tomosha qiling' },
     rep: { title: 'Bizning spektakllar' },
     sched: { title: 'Jadval' },
     tbl: { date: 'Sana', time: 'Vaqt', title: 'Nomi', author: 'Muallif', director: 'Rejissyor', genre: 'Janr' },
@@ -142,10 +142,10 @@ const translations = {
     ],
   },
   ru: {
-    meta: { title: 'Театр «Дийдор»', desc: 'Официальный сайт театра: афиша, репертуар, контакты.' },
-    brand: 'Театр «Дийдор»',
+    meta: { title: 'ГУ «Дийдор» — Молодёжный экспериментальный театр-студия', desc: 'Официальный сайт театра: афиша, репертуар, контакты.' },
+    brand: 'ГУ «Дийдор» — Молодёжный экспериментальный театр-студия',
     nav: { performances: 'Наши выступления', artists: 'Актеры', playbill: 'Афиша', about: 'О театре', contacts: 'Контакты' },
-    hero: { title: 'Театр «Дийдор»', subtitle: 'Классика и современность на одной сцене', cta: 'Смотреть афишу' },
+    hero: { title: 'ГУ «Дийдор» — Молодёжный экспериментальный театр-студия', subtitle: 'Классика и современность на одной сцене', cta: 'Смотреть афишу' },
     rep: { title: 'Наши спектакли' },
     sched: { title: 'Расписание' },
     tbl: { date: 'Дата', time: 'Время', title: 'Название', author: 'Автор', director: 'Режиссёр', genre: 'Жанр' },
@@ -182,10 +182,10 @@ const translations = {
     ],
   },
   en: {
-    meta: { title: '"Diydor" Theatre', desc: 'Official theatre website: playbill, repertoire, contacts.' },
-    brand: '"Diydor" Theatre',
+    meta: { title: 'GA "Diydor" Youth Experimental Theatre Studio', desc: 'Official theatre website: playbill, repertoire, contacts.' },
+    brand: 'GA "Diydor" Youth Experimental Theatre Studio',
     nav: { performances: 'Performances', artists: 'Actors', playbill: 'Playbill', about: 'About', contacts: 'Contacts' },
-    hero: { title: '"Diydor" Theatre', subtitle: 'Classics and modernity on one stage', cta: 'View playbill' },
+    hero: { title: 'GA "Diydor" Youth Experimental Theatre Studio', subtitle: 'Classics and modernity on one stage', cta: 'View playbill' },
     rep: { title: 'Our Performances' },
     sched: { title: 'Schedule' },
     tbl: { date: 'Date', time: 'Time', title: 'Title', author: 'Author', director: 'Director', genre: 'Genre' },
