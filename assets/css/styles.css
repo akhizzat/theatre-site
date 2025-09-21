@@ -20,11 +20,7 @@ html,body{
   background-size:cover;
   position:relative;
 }
-html::before{
-  content:"";position:fixed;inset:0;
-  background:rgba(0,0,0,.55);
-  z-index:-1;
-}
+html::before{content:"";position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:-1}
 
 *{box-sizing:border-box}
 img{max-width:100%;display:block}
@@ -33,39 +29,36 @@ a{color:inherit;text-decoration:none}
 
 /* ===== Header (светлая прозрачность) ===== */
 .header{
-  position:sticky;top:0;z-index:50;
+  position:sticky;top:0;z-index:70;
   background:rgba(255,255,255,.20);
   backdrop-filter:saturate(180%) blur(10px);
   border-bottom:1px solid rgba(255,255,255,.28);
 }
-.header__row{
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-  height:64px;
-}
+.header__row{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:#fff;white-space:nowrap}
 .logo img{width:28px;height:28px;filter:drop-shadow(0 0 2px rgba(0,0,0,.6))}
-.nav{display:flex;gap:18px;align-items:center}
-.nav a{padding:8px 10px;border-radius:10px}
-.nav a:hover{background:rgba(255,255,255,.15)}
-.nav-toggle{display:none;background:transparent;border:0;cursor:pointer}
-.nav-toggle span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px}
-
-/* ===== Переключатель языков (унифицированный) ===== */
-.lang-switch, .lang-switcher{
-  display:flex;gap:8px;align-items:center;
-}
-.btn-lang, .lang-switcher button{
-  padding:6px 10px;
-  border:1px solid var(--border);
+.nav{display:flex;gap:12px;align-items:center}
+.nav a{
+  display:inline-block;padding:8px 14px;line-height:1;color:#fff;
+  border:1px solid rgba(255,255,255,.28);border-radius:999px;
   background:rgba(255,255,255,.12);
-  color:#fff;border-radius:8px;cursor:pointer;
-  font-size:14px;line-height:1;
+  transition:transform .15s ease, background .15s ease, border-color .15s ease;
+  backdrop-filter:saturate(150%) blur(2px);
 }
-.btn-lang:hover, .lang-switcher button:hover{background:rgba(255,255,255,.22)}
-.btn-lang.active, .lang-switcher button.active{
-  background:linear-gradient(90deg,var(--acc),var(--acc-2));
-  border:0;color:#101016;
+.nav a:hover{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.35);transform:translateY(-1px)}
+.nav a.active{background:linear-gradient(90deg,var(--acc),var(--acc-2));color:#101016;border-color:transparent}
+.nav-toggle{display:none;background:transparent;border:0;cursor:pointer;position:relative;width:36px;height:36px;border-radius:10px}
+.nav-toggle::before{content:"⋯";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+.nav-toggle:active{background:rgba(255,255,255,.12)}
+
+/* ===== Переключатель языков ===== */
+.lang-switch,.lang-switcher{display:flex;gap:8px;align-items:center}
+.btn-lang,.lang-switcher button{
+  padding:6px 10px;border:1px solid var(--border);
+  background:rgba(255,255,255,.12);color:#fff;border-radius:8px;cursor:pointer;font-size:14px;line-height:1
 }
+.btn-lang:hover,.lang-switcher button:hover{background:rgba(255,255,255,.22)}
+.btn-lang.active,.lang-switcher button.active{background:linear-gradient(90deg,var(--acc),var(--acc-2));border:0;color:#101016}
 
 /* ===== Hero ===== */
 .hero{padding:48px 0 24px;border-bottom:1px solid var(--border)}
@@ -88,60 +81,42 @@ h1,h2,h3{
   text-shadow:-1px -1px 2px #000,1px -1px 2px #000,-1px 1px 2px #000,1px 1px 2px #000;
 }
 .section h2,.section--alt h2,.hero__text h1{
-  display:inline-block;
-  padding:8px 14px;
-  border-radius:12px;
-  background:linear-gradient(90deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.42) 55%, rgba(0,0,0,0) 100%);
-  border:1px solid rgba(255,255,255,.12);
-  backdrop-filter:saturate(150%) blur(2px);
+  display:inline-block;padding:8px 14px;border-radius:12px;
+  background:linear-gradient(90deg,rgba(0,0,0,.68) 0%,rgba(0,0,0,.42) 55%,rgba(0,0,0,0) 100%);
+  border:1px solid rgba(255,255,255,.12);backdrop-filter:saturate(150%) blur(2px);
 }
 
 /* Доп. бейдж */
-.badge-dark{
-  display:inline-block;padding:6px 10px;border-radius:10px;
-  background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.12)
-}
+.badge-dark{display:inline-block;padding:6px 10px;border-radius:10px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.12)}
 
-/* ===== Заголовок + описание (actors, и можно в других местах) ===== */
-.section-header{
-  display:flex;flex-direction:column;align-items:flex-start;gap:6px;
-}
+/* Заголовок + описание (actors, etc.) */
+.section-header{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
 .section-header h1{
-  display:inline-block;
-  padding:8px 14px;border-radius:12px;
-  background:linear-gradient(90deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.42) 55%, rgba(0,0,0,0) 100%);
-  border:1px solid rgba(255,255,255,.12);
-  backdrop-filter:saturate(150%) blur(2px);
-  color:#fff;font-weight:800;
-  text-shadow:-1px -1px 2px #000,1px -1px 2px #000,-1px 1px 2px #000,1px 1px 2px #000;
+  display:inline-block;padding:8px 14px;border-radius:12px;
+  background:linear-gradient(90deg,rgba(0,0,0,.68) 0%,rgba(0,0,0,.42) 55%,rgba(0,0,0,0) 100%);
+  border:1px solid rgba(255,255,255,.12);backdrop-filter:saturate(150%) blur(2px);
+  color:#fff;font-weight:800;text-shadow:-1px -1px 2px #000,1px -1px 2px #000,-1px 1px 2px #000,1px 1px 2px #000;
 }
 .section-sub{
-  display:inline-block;margin-top:6px;padding:6px 12px;border-radius:10px;
-  font-size:16px;color:#fff;
+  display:inline-block;margin-top:6px;padding:6px 12px;border-radius:10px;font-size:16px;color:#fff;
   text-shadow:-1px -1px 2px #000,1px -1px 2px #000,-1px 1px 2px #000,1px 1px 2px #000;
   background:linear-gradient(90deg,rgba(0,0,0,.65) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,0) 100%);
-  border:1px solid rgba(255,255,255,.12);
-  backdrop-filter:saturate(150%) blur(2px);
+  border:1px solid rgba(255,255,255,.12);backdrop-filter:saturate(150%) blur(2px);
 }
 
 /* ===== Grid + cards ===== */
 .grid{display:grid;gap:16px}
 .cards{grid-template-columns:repeat(3,1fr)}
 .card{
-  background:rgba(24,25,35,.9);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  overflow:hidden;display:flex;flex-direction:column;
+  background:rgba(24,25,35,.9);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;
 }
 .card__body{padding:14px 14px 16px;display:grid;gap:8px}
 
 /* ===== Таблица (расписание) ===== */
 .table-wrap{overflow:auto;border:1px solid var(--border);border-radius:12px;background:rgba(18,18,23,.9)}
 table{width:100%;border-collapse:collapse;min-width:760px}
-th,td{
-  padding:12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:middle;color:#fff;
-  text-shadow:1px 1px 3px rgba(0,0,0,.9);
-}
+th,td{padding:12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:middle;color:#fff;text-shadow:1px 1px 3px rgba(0,0,0,.9)}
 thead th{background:var(--bg-alt)}
 tbody td:nth-child(1), thead th:nth-child(1){white-space:nowrap;width:90px}
 tbody td:nth-child(2), thead th:nth-child(2){white-space:nowrap;width:90px}
@@ -163,23 +138,14 @@ tbody td:nth-child(2), thead th:nth-child(2){white-space:nowrap;width:90px}
 .steps li{margin:6px 0}
 
 /* ===== Форма ===== */
-.contact-form{display:grid;gap:10px;margin-top:10px}
-.contact-form label{display:grid;gap:6px;font-size:14px;color:var(--muted)}
+.contact-form{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+.contact-form label{font-size:14px;color:var(--muted)}
 .contact-form input,.contact-form textarea{
-  background:#101117;border:1px solid var(--border);color:var(--text);
-  padding:10px;border-radius:10px;outline:none
+  width:100%;min-height:44px;padding:10px 12px;color:var(--text);
+  background:#101117;border:1px solid var(--border);border-radius:10px;outline:none
 }
-.contact-form input:focus,.contact-form textarea:focus{border-color:var(--acc)}
-
-/* ===== Карта ===== */
-.map iframe{width:100%;height:320px;border:0;border-radius:var(--radius);border:1px solid var(--border);background:rgba(24,25,35,.9)}
-
-/* ===== Кнопки ===== */
-.btn{display:inline-block;padding:10px 14px;border:1px solid var(--border);border-radius:12px;background:transparent}
-.btn--primary{background:linear-gradient(90deg,var(--acc),var(--acc-2));color:#101016;border:0}
-.btn--small{padding:8px 12px}
-.btn--tiny{padding:6px 10px;font-size:14px}
-.btn--full{display:block;text-align:center;width:100%}
+.contact-form textarea{min-height:120px;resize:vertical}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--acc);box-shadow:0 0 0 2px rgba(199,155,255,.25)}
 
 /* ===== Footer ===== */
 .footer{border-top:1px solid var(--border);padding:16px 0;background:rgba(18,18,23,.9)}
@@ -199,20 +165,32 @@ tbody td:nth-child(2), thead th:nth-child(2){white-space:nowrap;width:90px}
 .card img{transition:transform .3s ease;cursor:pointer}
 .card img:hover{transform:scale(1.05)}
 
-/* ===== Lightbox ===== */
+/* ===== Lightbox + arrows ===== */
 .lightbox{
   position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
   background:rgba(0,0,0,.9);z-index:10000;opacity:0;pointer-events:none;transition:opacity .25s ease;
 }
 .lightbox.active{opacity:1;pointer-events:auto}
-.lightbox img{max-width:90%;max-height:90%;border-radius:var(--radius);box-shadow:0 0 20px rgba(0,0,0,.6);animation:zoomIn .2s ease}
+.lightbox img{
+  max-width:90%;max-height:90%;
+  border-radius:var(--radius);box-shadow:0 0 20px rgba(0,0,0,.6);animation:zoomIn .2s ease;
+}
 @keyframes zoomIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
 body.noscroll{overflow:hidden}
 
-/* ===== Адаптив ===== */
-@media (max-width:1100px){
-  .repertoire-grid{grid-template-columns:repeat(5,1fr)}
+.lb-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:48px;height:64px;border:0;border-radius:12px;
+  background:rgba(255,255,255,.15);color:#fff;font-size:34px;line-height:1;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+  backdrop-filter:saturate(150%) blur(2px)
 }
+.lb-btn:hover{background:rgba(255,255,255,.28)}
+.lb-prev{left:24px}
+.lb-next{right:24px}
+
+/* ===== Адаптив ===== */
+@media (max-width:1100px){ .repertoire-grid{grid-template-columns:repeat(5,1fr)} }
 @media (max-width:980px){
   .hero__row{grid-template-columns:1fr}
   .cards{grid-template-columns:repeat(2,1fr)}
@@ -223,106 +201,74 @@ body.noscroll{overflow:hidden}
 }
 @media (max-width:780px){
   .header__row{flex-wrap:wrap}
-  .nav{order:2;width:100%;justify-content:center}
   .lang-switch{order:3;width:100%;justify-content:center;margin-top:6px}
 }
+
+/* ===== Мобильная шапка: меню под «⋯», языки всегда видны ===== */
 @media (max-width:640px){
-  .cards{grid-template-columns:1fr}
-  .pricing{grid-template-columns:1fr}
+  .nav-toggle{display:block}
+  /* прячем меню — откроется по .show */
   .nav{
-    display:none;position:absolute;top:64px;right:16px;background:rgba(18,18,23,.95);
-    padding:10px;border:1px solid var(--border);border-radius:12px;flex-direction:column;min-width:180px
+    display:none; position:fixed; left:0; right:0; top:64px; bottom:auto;
+    background:rgba(18,18,23,.96); backdrop-filter:saturate(160%) blur(8px);
+    border-top:1px solid rgba(255,255,255,.18);
+    padding:14px 16px calc(14px + env(safe-area-inset-bottom));
+    z-index:60; flex-direction:column; gap:12px; justify-content:flex-start
   }
   .nav.show{display:flex}
-  .nav-toggle{display:block}
+  .nav a{padding:10px 14px}
+  .nav{flex-wrap:nowrap}
   .actors-grid{grid-template-columns:1fr}
   .actors-grid .card img{height:360px}
   .repertoire-grid{grid-template-columns:repeat(2,1fr)}
   .repertoire-grid .card img{height:260px}
 }
-/* Пилюли для пунктов меню */
-.nav {
-  display:flex; gap:12px; align-items:center;
+/* ==== ПИЛЮЛЯ-КНОПКА В HERO (как на скрине) ==== */
+.hero__cta .btn--primary{
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, var(--acc), var(--acc-2));
+  color: #101016;
+  border: 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
 }
-.nav a{
-  display:inline-block;
-  padding:8px 14px;
-  border:1px solid rgba(255,255,255,.28);
-  border-radius:999px;                 /* пилюля */
-  background:rgba(255,255,255,.12);
-  color:#fff;
-  line-height:1;
-  transition:transform .15s ease, background .15s ease, border-color .15s ease;
-  backdrop-filter:saturate(150%) blur(2px);
-}
-.nav a:hover{
-  background:rgba(255,255,255,.22);
-  border-color:rgba(255,255,255,.35);
-  transform:translateY(-1px);
-}
-.nav a.active{
-  background:linear-gradient(90deg, var(--acc), var(--acc-2));
-  color:#101016;
-  border-color:transparent;
+.hero__cta .btn--primary:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.28);
+  opacity: .95;
 }
 
-/* На очень узких экранах — чтобы не ломалось */
-@media (max-width:640px){
-  .nav{flex-wrap:wrap; justify-content:center}
-  .nav a{padding:8px 12px; font-size:14px}
+/* ==== КНОПКА ОТПРАВКИ В ФОРМЕ (полная ширина, градиент) ==== */
+.contact-form .btn--primary{
+  display: block;
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, var(--acc), var(--acc-2));
+  color: #101016;
+  border: 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
 }
-.contact-form{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:12px;
-  margin-top:12px;
-}
-
-.contact-form label{
-  font-size:14px;
-  color:var(--muted);
-}
-
-.contact-form input,
-.contact-form textarea{
-  width:100%;
-  min-height:44px;
-  padding:10px 12px;
-  color:var(--text);
-  background:#101117;
-  border:1px solid var(--border);
-  border-radius:10px;
-  outline:none;
+.contact-form .btn--primary:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.28);
+  opacity: .95;
 }
 
-.contact-form textarea{
-  min-height:120px;          /* поле сообщения заметно */
-  resize:vertical;
+/* (опционально) слегка увеличим радиус у полупрозрачной плашки hero для гармонии */
+.hero__text{ border-radius: 16px; }
+/* ===== Карта ===== */
+.map {
+  margin-top: 20px;
 }
-
-.contact-form input:focus,
-.contact-form textarea:focus{
-  border-color:var(--acc);
-  box-shadow:0 0 0 2px rgba(199,155,255,.25);
+.map iframe {
+  width: 100%;
+  height: 360px;              /* можно увеличить/уменьшить */
+  border: 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(24,25,35,.9);
+  display: block;
 }
-/* Lightbox arrows */
-.lightbox{
-  position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
-  background:rgba(0,0,0,.9); z-index:10000; opacity:0; pointer-events:none; transition:opacity .25s ease;
-}
-.lightbox.active{opacity:1; pointer-events:auto}
-.lightbox img{
-  max-width:90%; max-height:90%;
-  border-radius:var(--radius); box-shadow:0 0 20px rgba(0,0,0,.6); animation:zoomIn .2s ease;
-}
-
-.lb-btn{
-  position:absolute; top:50%; transform:translateY(-50%);
-  width:48px; height:64px; border:0; border-radius:12px;
-  background:rgba(255,255,255,.15); color:#fff; font-size:34px; line-height:1;
-  display:flex; align-items:center; justify-content:center; cursor:pointer;
-  backdrop-filter:saturate(150%) blur(2px);
-}
-.lb-btn:hover{background:rgba(255,255,255,.28)}
-.lb-prev{left:24px}
-.lb-next{right:24px}
