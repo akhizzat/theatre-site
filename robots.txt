@@ -1,0 +1,6 @@
+﻿
+
+
+User-agent: *
+Allow: /
+Sitemap: https://akhizzat.github.io/theatre-site/sitemap.xml
